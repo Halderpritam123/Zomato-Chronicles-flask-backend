@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class="slide-in">Menu</h2>
+    <table class="menu-table fade-in">
+        <tr>
+            <th>ID</th>
+            <th>Dish Name</th>
+            <th>Price</th>
+            <th>Availability</th>
+            <th>Action</th>
+        </tr>
+        {% for dish in menu %}
+            <tr>
+                <td>{{ dish.id }}</td>
+                <td>{{ dish.name }}</td>
+                <td>{{ dish.price }}</td>
+                <td>{{ "Available" if dish.availability else "Unavailable" }}</td>
+                <td>
+                    <form action="{{ url_for('add_to_order', dish_id=dish.id) }}" method="POST">
+                        <button type="submit" class="slide-in">Add to Order</button>
+                    </form>
+                    <form action="{{ url_for('remove_from_menu', dish_id=dish.id) }}" method="POST">
+                        <button type="submit" class="slide-in">Remove</button>
+                    </form>
+                    <form action="{{ url_for('update_availability', dish_id=dish.id) }}" method="POST">
+                        {% if dish.availability %}
+                            <input type="hidden" name="dish_availability" value="False">
+                            <button type="submit" class="slide-in">Make Unavailable</button>
+                        {% else %}
+                            <input type="hidden" name="dish_availability" value="True">
+                            <button type="submit" class="slide-in">Make Available</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

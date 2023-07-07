@@ -1,0 +1,174 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1, h2 {
+    color: #333;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  /* Menu page styles */
+  .menu-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .menu-table th,
+  .menu-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .menu-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .menu-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .menu-actions button {
+    padding: 8px 16px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-actions button.add-to-order {
+    background-color: #4caf50;
+  }
+  
+  .menu-actions button.add-to-order:hover {
+    background-color: #45a049;
+  }
+  
+  .menu-actions button.remove {
+    background-color: #f44336;
+  }
+  
+  .menu-actions button.remove:hover {
+    background-color: #e53935;
+  }
+  
+  .menu-actions button.toggle-availability {
+    background-color: #2196f3;
+  }
+  
+  .menu-actions button.toggle-availability:hover {
+    background-color: #1e88e5;
+  }
+  
+  /* Order page styles */
+  .order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .order-table th,
+  .order-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .order-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .order-actions select {
+    padding: 8px;
+  }
+  
+  .order-actions button {
+    padding: 8px 16px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .order-actions button.remove {
+    background-color: #f44336;
+  }
+  
+  .order-actions button.remove:hover {
+    background-color: #e53935;
+  }
+  
+  .order-actions button.update-status {
+    background-color: #9c27b0;
+  }
+  
+  .order-actions button.update-status:hover {
+    background-color: #8e24aa;
+  }
+  
+  /* Animation styles */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-in {
+    animation: slideIn 0.8s ease;
+  }
+button{
+    background-color: #4caf50;
+    border-radius: 2px;
+    border: 0;
+    padding: 4px;
+    color: white;
+}  

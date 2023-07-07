@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class="slide-in">Order</h2>
+    <table class="order-table fade-in">
+        <tr>
+            <th>ID</th>
+            <th>Dish Name</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        {% for dish in order %}
+            <tr>
+                <td>{{ dish.id }}</td>
+                <td>{{ dish.name }}</td>
+                <td>{{ dish.price }}</td>
+                <td>{{ dish.status }}</td>
+                <td>
+                    <form action="{{ url_for('remove_from_order', dish_id=dish.id) }}" method="POST">
+                        <button type="submit" class="slide-in">Remove</button>
+                    </form>
+                    <form action="{{ url_for('update_status', dish_id=dish.id) }}" method="POST">
+                        <select name="dish_status" class="slide-in">
+                            <option value="Pending" {% if dish.status == 'Pending' %}selected{% endif %}>Pending</option>
+                            <option value="In Progress" {% if dish.status == 'In Progress' %}selected{% endif %}>In Progress</option>
+                            <option value="Completed" {% if dish.status == 'Completed' %}selected{% endif %}>Completed</option>
+                        </select>
+                        <button type="submit" class="slide-in">Update Status</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
